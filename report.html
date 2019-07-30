@@ -55,16 +55,24 @@
           <input type="text" name="name" value=""><br><br>
           Age (Expected):
           <input type="text" name="age" value=""><br><br>
-          Sex :
+          Sex :<br>
           <input type="radio" name="gender" value="male"> Male<br>
           <input type="radio" name="gender" value="female"> Female<br>
           <input type="radio" name="gender" value="other"> Other<br>
           Phone (optional):
           <input type="text" name="phone" value=""><br><br>
-          Inujury severity:
-          <input type="radio" name="condition" value="normal"> Normal<br>
-          <input type="radio" name="condition" value="severe"> Severe<br>
-
+          Inujury severity:<br>
+          <input type="radio" name="condition" value="normal" onClick='normal();'> Normal<br>
+          <input type="radio" name="condition" value="severe" onClick='severe();'> Severe<br>
+          <div id="normal" style="display:none;">
+          <input type="checkbox" name="normal_situation" value="Cuts"> Cuts<br> 
+          <input type="checkbox" name="normal_situation" value="Burns"> Burns<br>
+          </div>
+          <div id="severe" style="display:none;">
+          <input type="checkbox" name="normal_situation" value="bleeding"> Bleeding<br> 
+          <input type="checkbox" name="normal_situation" value="stroke"> Stroke<br>
+          <input type="checkbox" name="normal_situation" value="cardiac_arrest"> Cardiac arrest<br> 
+          </div>
           What are the injuries happened:<br>
           <textarea cols="40" rows="5" name="details">
             
@@ -90,6 +98,17 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <script>
+  function normal()
+{
+   document.getElementById('normal').style.display = "block";
+}
+    function severe()
+{
+   document.getElementById('severe').style.display = "block";
+}
+  
+  </script>
 </body>
 
 </html>
